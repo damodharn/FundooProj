@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+        <h2> Reset Password </h2>
+          <form action="/delete" method="post">
+             {% csrf_token %}
+              <h3>Enter user email-id to delete user from DB.</h3>
+              <input type="email" name="email" placeholder="Email-id  eg: abc@email.com" required> <br><br>
+              <button type="submit"> Delete User. </button> <br> <br>
+          </form>
+</body>
+</html>

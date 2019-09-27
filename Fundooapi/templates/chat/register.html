@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body bgcolor="grey">
+<h2> Registration Form </h2>
+<p> Please Enter your details.</p>
+         <form action="/signup/" method="post">
+             {% csrf_token %}
+              <input type="text" name="first_name" placeholder="First Name" required> <br><br>
+              <input type="text" name="last_name" placeholder="Last Name" required> <br><br>
+              <input type="text" name="username" placeholder="Username (at least 4 char)" required> <br><br>
+              <input type="email" name="email" placeholder="Email-id  eg: abc@email.com" required> <br><br>
+              <input type="password" name="password" placeholder="Password" required> <br><br>
+              <input type="password" name="password2" placeholder="Confirm Password" required> <br><br>
+              <button type="submit"> Register </button> <br>
+               Already have an account ?
+             <button onclick="myFunction()">Login </button>
+            <script>
+            function myFunction() {
+              location.replace("/login_view/")
+            }
+            </script>
+  </form> <br>
+        <p><strong>-- OR --</strong></p>
+  <a href="{% url 'social:begin' 'github' %}">Login with GitHub.</a><br>
+  <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook.</a>
+</body>
+</html>
